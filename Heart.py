@@ -1,6 +1,6 @@
 import streamlit as st
 import numpy as np
-import matplotlib as plt
+#import matplotlib as plt
 
 def heart_shape():
     t = np.linspace(0, 2 * np.pi, 1000)
