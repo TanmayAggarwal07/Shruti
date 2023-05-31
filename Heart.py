@@ -1,6 +1,5 @@
 import streamlit as st
 import numpy as np
-#import matplotlib as plt
 
 def heart_shape():
     t = np.linspace(0, 2 * np.pi, 1000)
@@ -13,10 +12,16 @@ x, y = heart_shape()
 
 st.title("I LOVE YOU BBY AND MISS YOU")
 
-fig, ax = plt.subplots()
-ax.plot(x, y, color='red')
-ax.fill(x, y, color='red')
-ax.set_aspect("equal")
-ax.axis("off")
-
-st.pyplot(fig)
+st.plotly_chart({
+    "data": [
+        {"x": x, "y": y, "type": "scatter", "fill": "toself", "fillcolor": "red"}
+    ],
+    "layout": {
+        "xaxis": {"visible": False},
+        "yaxis": {"visible": False},
+        "showlegend": False,
+        "width": 500,
+        "height": 500,
+        "plot_bgcolor": "white"
+    }
+})
